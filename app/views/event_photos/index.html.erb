@@ -1,0 +1,29 @@
+<h1>Listing event_photos</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>File name</th>
+    <th>Content type</th>
+    <th>Binary data</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @event_photos.each do |event_photo| %>
+  <tr>
+    <td><%= event_photo.event %></td>
+    <td><%= event_photo.file_name %></td>
+    <td><%= event_photo.content_type %></td>
+    <td><%= image_tag(image_event_photo_url(event_photo), :alt => 'image') %></td>
+    <td><%= link_to 'Show', event_photo %></td>
+    <td><%= link_to 'Edit', edit_event_photo_path(event_photo) %></td>
+    <td><%= link_to 'Destroy', event_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event photo', new_event_photo_path %>

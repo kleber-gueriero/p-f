@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  event: 
+  file_name: MyString
+  content_type: MyString
+  binary_data: 
+
+two:
+  event: 
+  file_name: MyString
+  content_type: MyString
+  binary_data: 

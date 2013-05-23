@@ -1,0 +1,25 @@
+<%= form_for(@event_photo) do |f| %>
+  <% if @event_photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event_photo.errors.count, "error") %> prohibited this event_photo from being saved:</h2>
+
+      <ul>
+      <% @event_photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event %><br />
+    <%= f.collection_select(:event_id, Event.all, :id, :name, :include_blank => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :image_file %><br />
+    <%= f.file_field :image_file %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<p id="notice">
+	<%= notice %>
+</p>
+
+<p>
+	<b>Name:</b>
+	<%= @event.name %>
+</p>
+
+<p>
+	<b>Description:</b>
+	<%= @event.description %>
+</p>
+
+<p>
+	<b>Event date:</b>
+	<%= @event.event_date %>
+</p>
+
+<div class="row">
+	<div class="large-12 columns">
+		<ul class="small-block-grid-1 large-block-grid-5 clearing-thumbs" data-clearing>
+			<% @event.event_photos.each do |ep| %>
+			<li>
+				<%= link_to(image_event_photo_url(ep) ) do %>
+				<%= image_tag(image_event_photo_url(ep),
+				:alt => 'image', 'data-caption' => 'CAPTION') %>
+				<% end %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
