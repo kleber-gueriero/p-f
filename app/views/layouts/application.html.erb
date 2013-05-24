@@ -25,10 +25,12 @@
 	<body>
 		<header>
 			<div class="row show-for-medium-up">
-				<h1 class="small-10 large-9 columns"> Pereira & Franco Cenografias e Eventos </h1>
+				<h1 class="small-10 large-12 columns"> Pereira & Franco Cenografias e Eventos </h1>
+				<!--
 				<div class="small-2 large-3 columns">
-					<%= image_tag('rosas.jpg',:class => 'header-img') %>
+					<%= image_tag('flores_lilas.jpg',:class => 'header-img') %>
 				</div>
+				!-->
 			</div>
 		</header>
 
@@ -45,18 +47,32 @@
 				</ul>
 				<section class="top-bar-section">
 					<ul class="left">
-						<li>
+						<li class="divider"></li>
+						<li <%= if current_page?(events_url) then 'class=active' end %> >
 							<%= link_to "Eventos", events_url %>
 						</li>
-						<li>
+						<li class="divider"></li>
+						<li <%= if current_page?(pages_about_us_url) then 'class=active' end %> >
 							<%= link_to "Quem Somos", pages_about_us_url %>
 						</li>
-						<li>
+						<li class="divider"></li>
+						<li <%= if current_page?(pages_contact_url) then 'class=active' end %> >
 							<%= link_to "Contato", pages_contact_url %>
 						</li>
+						<li class="divider"></li>
 					</ul>
+					<ul class="right">
+						<li class="divider"></li>
+						<li <%= if current_page?(admin_session_url) then 'class=active' end %> >
+							<%= link_to "Login", admin_session_url %>
+						</li>
+						<li class="divider"></li>
+					</ul>
+				</section>
 			</nav>
 		</div>
+
+		
 		<div class="row">
 			<div class="large-12 columns">
 				<%= yield %>

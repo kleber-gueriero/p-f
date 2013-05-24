@@ -6,11 +6,18 @@ Pereiraefranco::Application.routes.draw do
 
   resources :events
 
-  devise_for :admins
+  devise_for :admin
+  
+  namespace "admin" do
+    resources :events
+  end
+  
+  authenticated :user do
+    root :to => "admin/events#index"
+  end
 
   root :to => 'pages#index'
   
-  get 'admin/admin'
   get 'pages/about_us'
   get 'pages/contact'
   
