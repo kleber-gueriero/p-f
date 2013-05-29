@@ -1,8 +1,7 @@
 //Variaveis Application
 $main-color: #C67AD9;
 $header-bg: rgba($main-color,0.3);
-
-
+$logo-font-family: "AmazoneBT", Verdana, Tahoma;
 
 //Variaveis Foundation
 $body-bg: rgba($main-color,0.2);
@@ -18,38 +17,19 @@ $topbar-menu-icon-color: $topbar-link-color;
 $topbar-menu-link-color-toggled: $topbar-menu-link-color;
 $topbar-menu-icon-color-toggled: $topbar-menu-icon-color;
 
+$header-font-family: $logo-font-family;
+// $header-font-weight: bold;
+// $header-font-style: normal;
+$header-font-color: $topbar-link-color;
+// $header-line-height: 1.4;
+// $header-top-margin: .2em;
+// $header-bottom-margin: .5em;
 
-
-// Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: emCalc(30px);
-
-// Controlling the styles for the title in the top bar
-// $topbar-title-weight: bold;
-// $topbar-title-font-size: emCalc(17px);
-
-// Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-weight: bold;
-// $topbar-link-font-size: emCalc(13px);
-
-// Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
-// $topbar-dropdown-toggle-alpha: 0.5;
-// $dropdown-label-color: #555;
-
-// Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: emCalc(13px);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
-
+// $body-bg: #fff;
+// $body-font-color: #222;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-weight: normal;
+// $body-font-style: normal;
 
 @import "foundation_and_overrides";
 //= require_self
@@ -76,8 +56,6 @@ ul.clearing-thumbs
 header{
   background-color: $header-bg;
   h1{
-  font-family: "AmazoneBT", Verdana, Tahoma;
-  color: $topbar-link-color;
   font-size: 50px;
   }
   .header-img{
@@ -107,4 +85,7 @@ ul[data-orbit]
     background: $topbar-link-bg-hover;
   }
 }
- 
+.logo-font
+{
+  font-family: $logo-font-family;
+}
