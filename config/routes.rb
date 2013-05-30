@@ -1,15 +1,17 @@
 Pereiraefranco::Application.routes.draw do
   
-  resources :event_photos do
+  resources :event_photos, :only=>[:image] do
     get :image, :on => :member
   end
 
-  resources :events
-
-  devise_for :admin
+  resources :events, :only => [:index,:show]
+  
+  scope '/admin' do
+    devise_for :admin
+  end
   
   namespace "admin" do
-    resources :events
+    resources :events, :event_photos
   end
   
   authenticated :user do

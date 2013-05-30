@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<!--<![endif]-->
 	<head>
 		<meta charset="utf-8" />
@@ -53,9 +53,19 @@
 					</ul>
 					<ul class="right">
 						<li class="divider"></li>
+						<%if admin_signed_in? %>
+						<li <%= if current_page?(admin_events_url) then 'class=active' end %> >
+							<%= link_to "Eventos-Admin", admin_events_url %>
+						</li>
+						<li class="divider"></li>
+						<li>
+							<%= link_to "Sair", destroy_admin_session_url, :method => :delete %>
+						</li>
+						<% else %>
 						<li <%= if current_page?(admin_session_url) then 'class=active' end %> >
 							<%= link_to "Entrar", admin_session_url %>
 						</li>
+						<%end%>
 						<li class="divider"></li>
 					</ul>
 				</section>

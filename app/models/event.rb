@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   attr_accessible :description, :event_date, :name, :event_photos
 
   def cover_photo
-    self.event_photos.where(:is_cover => true).first
+    photo = self.event_photos.where(:is_cover => true).first || self.event_photos.first
   end
 
 end
