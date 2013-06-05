@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605025103) do
+ActiveRecord::Schema.define(:version => 20130605173918) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(:version => 20130605025103) do
     t.date     "event_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "general_logs", :force => true do |t|
+    t.integer  "log_type"
+    t.string   "header"
+    t.text     "body"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
