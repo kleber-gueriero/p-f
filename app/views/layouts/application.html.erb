@@ -46,8 +46,8 @@
 							<%= link_to "Quem Somos", pages_about_us_url %>
 						</li>
 						<li class="divider"></li>
-						<li <%= if current_page?(pages_contact_url) then 'class=active' end %> >
-							<%= link_to "Contato", pages_contact_url %>
+						<li <%= if current_page?(new_email_message_url) then 'class=active' end %> >
+							<%= link_to "Contato", new_email_message_url %>
 						</li>
 						<li class="divider"></li>
 					</ul>

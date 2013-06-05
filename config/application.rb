@@ -62,5 +62,24 @@ module Pereiraefranco
     #Para funcionar no heroku
     config.assets.initialize_on_precompile = false
     
+    #Configuração para usar o envio com o gmail
+    #config.action_mailer.delivery_method = :smtp
+    config.delivery_method = :smtp
+    config.perform_deliveries = true
+    config.raise_delivery_errors = true
+    config.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => "587",
+      :domain               => 'gmail.com',
+      :user_name            => 'kleberng1990@gmail.com',
+      :password             => 'Ge8726049Kng',
+      :authentication       => 'plain',
+      :enable_starttls_auto => true  
+    }
+    #config.action_mailer.default_url_options = {
+    #  :host => "yourdomain.dev"
+    #}
+
+    
   end
 end

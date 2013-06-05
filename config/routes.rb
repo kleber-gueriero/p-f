@@ -3,8 +3,9 @@ Pereiraefranco::Application.routes.draw do
   resources :event_photos, :only=>[:image] do
     get :image, :on => :member
   end
-
+  
   resources :events, :only => [:index,:show]
+  resources :email_message, :only => [:index,:new, :create] 
   
   scope '/admin' do
     devise_for :admin
@@ -21,7 +22,6 @@ Pereiraefranco::Application.routes.draw do
   root :to => 'pages#index'
   
   get 'pages/about_us'
-  get 'pages/contact'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

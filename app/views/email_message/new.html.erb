@@ -1,0 +1,43 @@
+<div class="row">
+	<% if @email_message.errors.any? %>
+	<div id="error_explanation">
+		<h2><%= pluralize(@email_message.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+		<ul>
+			<% @email_message.errors.full_messages.each do |msg| %>
+			<li>
+				<%= msg %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+</div>
+<div class="row">
+	
+	<%= form_for @email_message, url: email_message_index_path do |f| %>
+
+	<div class="field">
+		<%= f.text_field :subject, :placeholder => "Assunto" %>
+	</div>
+
+	<div class="field">
+		<%= f.text_field :name, :placeholder => "Nome" %>
+	</div>
+
+	<div class="field">
+		<%= f.text_field :from, :placeholder => "Email" %>
+	</div>
+
+	<div class="field">
+		<%= f.text_area :body, :placeholder => "" %>
+	</div>
+
+	<p>
+		<%= f.submit  "Enviar", :class => "button" %>
+	</p>
+	<% end %>
+</div>
+<div class="row">
+	Ou pelo telefone: (015) 3012-2067
+</div>
