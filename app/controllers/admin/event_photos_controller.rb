@@ -26,10 +26,7 @@ class Admin::EventPhotosController < Admin::AdminController
 
   def new
     @event_photo = EventPhoto.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
+    respond_with(@event_photo)
   end
 
   def edit
@@ -39,13 +36,12 @@ class Admin::EventPhotosController < Admin::AdminController
   def create
     @event_photo = EventPhoto.new(params[:event_photo])
 
-    respond_to do |format|
       if @event_photo.save
-        format.html { redirect_to @event_photo, notice: 'Event photo was successfully created.' }
+        flash[:notice] = "Foto adicionada com sucesso"
+        respond_with([:admin,@event_photo])
       else
         format.html { render action: "new" }
       end
-    end
   end
 
   def update
