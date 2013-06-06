@@ -1,0 +1,18 @@
+#encoding: UTF-8 
+
+pt-BR:
+  events:
+    index:
+      title: 'Eventos'
+    show:
+      title: 'Eventos'
+  admin:
+    events:
+      index:
+        title: 'Eventos - Admin'
+      new:
+        title: 'Eventos - Admin'
+      edit:
+        title: 'Eventos - Admin'
+      show:
+        title: 'Eventos - Admin'

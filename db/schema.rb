@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605173918) do
+ActiveRecord::Schema.define(:version => 20130606214945) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -42,12 +42,14 @@ ActiveRecord::Schema.define(:version => 20130605173918) do
 
   create_table "event_photos", :force => true do |t|
     t.integer  "event_id"
-    t.string   "file_name"
-    t.string   "content_type"
-    t.binary   "binary_data"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.boolean  "is_cover"
+    t.string   "before_file_name"
+    t.string   "before_content_type"
+    t.binary   "before_binary_data"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "after_file_name"
+    t.string   "after_content_type"
+    t.binary   "after_binary_data"
   end
 
   add_index "event_photos", ["event_id"], :name => "index_event_photos_on_event_id"
@@ -56,8 +58,11 @@ ActiveRecord::Schema.define(:version => 20130605173918) do
     t.string   "name"
     t.string   "description"
     t.date     "event_date"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.binary   "cover_binary_data"
   end
 
   create_table "general_logs", :force => true do |t|

@@ -1,10 +1,15 @@
 Pereiraefranco::Application.routes.draw do
   
-  resources :event_photos, :only=>[:image] do
-    get :image, :on => :member
+  resources :event_photos, :only=>[:before_image,:after_image] do
+    get :before_image, :on => :member
+    get :after_image, :on => :member
   end
   
-  resources :events, :only => [:index,:show]
+  resources :events, :only => [:cover_image,:index,:show] do
+    get :cover_image, :on => :member
+  end
+  
+  
   resources :email_message, :only => [:index,:new, :create] 
   
   scope '/admin' do

@@ -12,8 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :image_file %><br />
-    <%= f.file_field :image_file %>
+    <%= f.label :before_image_file %><br />
+    <%= f.file_field :before_image_file %>
+  </div>
+  <div class="field">
+    <%= f.label :after_image_file %><br />
+    <%= f.file_field :after_image_file %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,4 +1,4 @@
-<h1>Coberturas</h1>
+<h1><%= t(".title") %></h1>
 <ul class="small-block-grid-1 large-block-grid-4">
 	<% @events.each do |event| %>
 	<li>
@@ -8,13 +8,13 @@
 				<span><%= event.name %></span>
 			</div>
 			<div class="large-12 columns">
-				<%= unless event.cover_photo.nil? then
-          image_tag(image_event_photo_url(event.cover_photo),
+				<%= unless event.cover_file_name.nil? then
+          image_tag(cover_image_event_url(event),
 				:alt => 'image', 'data-caption' => 'CAPTION')
         end %>
 			</div>
 			<div>
-				<%= event.event_date %>
+				<%= l event.event_date %>
 			</div>
 		</div>
 		<% end %>
@@ -29,4 +29,4 @@
 </ul>
 <br />
 
-<%= link_to 'Novo', new_admin_event_path %>
+<%= link_to 'Novo', new_admin_event_path, :class => "button" %>

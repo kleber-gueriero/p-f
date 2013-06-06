@@ -32,9 +32,14 @@ $header-font-color: $topbar-link-color;
 // $body-font-style: normal;
 
 @import "foundation_and_overrides";
+//= require jquery-ui
 //= require_self
 //= require_tree .
 
+*{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
 
 @font-face {
   font-family: 'AmazoneBT';
