@@ -8,60 +8,24 @@ class Admin::EventPhotosController < Admin::AdminController
                        :disposition => 'inline')
   end
   
-  def index
-    @event_photos = EventPhoto.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
-  end
-
-  def show
-    @event_photo = EventPhoto.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
-  end
-
-  def new
-    @event_photo = EventPhoto.new
-    respond_with(@event_photo)
-  end
-
-  def edit
-    @event_photo = EventPhoto.find(params[:id])
-  end
-
   def create
-    @event_photo = EventPhoto.new(params[:event_photo])
+    @event = Event.find(params[:event_id])
+    @event_photo = @event.event_photos.build(params[:event_photo])
 
       if @event_photo.save
         flash[:notice] = "Foto adicionada com sucesso"
-        respond_with([:admin,@event_photo])
+        redirect_to( edit_admin_event_path(@event))
       else
         format.html { render action: "new" }
       end
   end
 
-  def update
-    @event_photo = EventPhoto.find(params[:id])
-
-    respond_to do |format|
-      if @event_photo.update_attributes(params[:event_photo])
-        format.html { redirect_to @event_photo, notice: 'Event photo was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
-    end
-  end
-
   def destroy
+    @event = Event.find(params[:event_id])
     @event_photo = EventPhoto.find(params[:id])
     @event_photo.destroy
 
-    respond_to do |format|
-      format.html { redirect_to event_photos_url }
-    end
+    redirect_to( edit_admin_event_path(@event))    
+
   end
 end

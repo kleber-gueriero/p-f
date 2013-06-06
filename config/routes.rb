@@ -12,7 +12,9 @@ Pereiraefranco::Application.routes.draw do
   end
   
   namespace "admin" do
-    resources :events, :event_photos
+    resources :events do
+      resources :event_photos, :only => [:create,:destroy]
+    end
   end
   
   authenticated :user do

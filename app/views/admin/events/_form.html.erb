@@ -46,7 +46,7 @@
 				</div>
 				<div class="row">
 					<div class="large-12 columns">
-						<%= link_to 'Excluir', admin_event_photo_path, method: :delete, data: { confirm: 'Você tem certeza?' } %>
+						<%= link_to 'Excluir', admin_event_event_photo_path(@event,event_photo), method: :delete, data: { confirm: 'Você tem certeza?' } %>
 					</div>
 				</div>
 			</li>
@@ -59,3 +59,5 @@
 	<%= f.submit %>
 </div>
 <% end %>
+<% @event_photo = EventPhoto.new %>
+
