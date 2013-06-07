@@ -16,7 +16,7 @@ class Admin::EventPhotosController < Admin::AdminController
         flash[:notice] = "Foto adicionada com sucesso"
         redirect_to( edit_admin_event_path(@event))
       else
-        format.html { render action: "new" }
+        format.html { render action: "edit", controller: "admin/events" }
       end
   end
 

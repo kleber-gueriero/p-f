@@ -19,10 +19,7 @@ class Admin::EventsController < Admin::AdminController
 
   def new
     @event = Event.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
+    respond_with @event
   end
 
   def edit
@@ -57,8 +54,8 @@ class Admin::EventsController < Admin::AdminController
     @event = Event.find(params[:id])
     @event.destroy
 
-    respond_to do |format|
-      format.html { redirect_to events_url }
+    respond_with do |format|
+      format.html { redirect_to admin_events_url }
     end
   end
 end

@@ -1,10 +1,14 @@
+<div class="row display">
+	<div class="large-9 columns">
+		<h1><%= @event.name %></h1>
+	</div>
+	<div class="large-3 columns">
+		<h1 class="subheader"><%= l @event.event_date %></span>
+	</div>
+</div>
+
 <p id="notice">
 	<%= notice %>
-</p>
-
-<p>
-	<b>Name:</b>
-	<%= @event.name %>
 </p>
 
 <p>
@@ -12,34 +16,24 @@
 	<%= @event.description %>
 </p>
 
-<p>
-	<b>Event date:</b>
-	<%= l @event.event_date %>
-</p>
 <div class="switch">
-  <input id="rad-before" name="switch-before-after" type="radio" >
-  <label for="rad-before" onclick="">Antes</label>
+	<input id="rad-before" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" >
+	<label for="rad-before" >Antes</label>
 
-  <input id="rad-after" name="switch-before-after" type="radio" checked>
-  <label for="rad-after" onclick="">Depois</label>
-  <span class="switch-lever"></span>
+	<input id="rad-after" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" checked>
+	<label for="rad-after" onclick="">Depois</label>
+	<span class="switch-lever"><%= image_tag("double_direction_arrow.png") %></span>
 </div>
 
 <div class="row">
 	<div class="large-12 columns">
-		<ul class="small-block-grid-1 large-block-grid-5 clearing-thumbs" data-clearing>
+		<ul class="small-block-grid-1 large-block-grid-5 before-after-list" >
 			<% @event.event_photos.each do |ep| %>
-			<li>
-				<%= link_to(before_image_event_photo_url(ep) ) do %>
-				<%= image_tag(before_image_event_photo_url(ep),
-				:alt => ep.before_file_name, 'data-caption' => '') %>
-				<% end %>
+			<li class="before-item" style="display:none;">
+				<%= image_tag(before_image_event_photo_url(ep), :alt => ep.before_file_name) %>
 			</li>
-			<li>
-				<%= link_to(after_image_event_photo_url(ep) ) do %>
-				<%= image_tag(after_image_event_photo_url(ep),
-				:alt => ep.after_file_name, 'data-caption' => '') %>
-				<% end %>
+			<li class="after-item">
+				<%= image_tag(after_image_event_photo_url(ep), :alt => ep.after_file_name) %>
 			</li>
 			<% end %>
 		</ul>

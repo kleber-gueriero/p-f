@@ -21,3 +21,14 @@ $(document).foundation();
 $('.date-field').datepicker({
 	altFormat : "dd/MM/yy"
 });
+
+function switchBeforeAfter(sender) {
+	if (sender.id == 'rad-before') {
+		$('.before-after-list .after-item').hide();
+		$('.before-after-list .before-item').show();
+	} else {
+		$('.before-after-list .before-item').hide();
+		$('.before-after-list .after-item').show();
+	};
+
+}

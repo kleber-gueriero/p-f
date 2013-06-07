@@ -94,3 +94,19 @@ ul[data-orbit]
 {
   font-family: $logo-font-family;
 }
+.switch-lever{
+  
+}
+.before-after-list li:hover
+{
+  z-index: 999999;
+  position: fixed !important;
+  background-color: rgba($main-color,0.5);
+  top: 5%;
+  height: 95%;
+  width: 95%;
+  img{
+    position: absolute;
+    
+  }
+}

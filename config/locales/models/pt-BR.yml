@@ -1,0 +1,12 @@
+#encoding: UTF-8 
+
+pt-BR:
+  activerecord:
+    models:
+      event:
+        one: "Evento"
+        other: "Eventos"
+    attributes:
+      event:
+        cover_image_file: "Capa"
+        name: "Nome do Evento"

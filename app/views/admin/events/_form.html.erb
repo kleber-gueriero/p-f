@@ -12,19 +12,32 @@
 	</ul>
 </div>
 <% end %>
-
 <div class="row">
-	<div class="large-3 columns">
-    <%= f.label :cover_image_file %><br />
-    <%= f.file_field :cover_image_file %>
-  </div>
-	<div class="large-3 columns">
+	<div class="large-12 columns">
+		<%= 
+		unless @event.cover_file_name.nil?
+			image_tag(cover_image_event_path(@event))	
+		else
+			image_tag("image_not_set.png")
+		end
+		 %>
+	</div>
+</div>
+<div class="row">
+	<div class="large-6 large-centered columns">
+		<%= f.label :cover_image_file %>
+		<br />
+		<%= f.file_field :cover_image_file %>
+	</div>
+</div>
+<div class="row">
+	<div class="large-4 columns">
 		<%= f.text_field :name, :placeholder => "Evento" %>
 	</div>
-	<div class="large-3 columns">
+	<div class="large-4 columns">
 		<%= f.text_field :description, :placeholder => "Descrição" %>
 	</div>
-	<div class="large-3 columns">
+	<div class="large-4 columns">
 		<%= f.text_field :event_date, :class => "date-field", :placeholder => "Data" %>
 	</div>
 </div>
@@ -32,21 +45,27 @@
 <div class="row">
 	<div class="large-12 columns">
 		<ul class="large-block-grid-5 clearing-thumbs" data-clearing>
-			<% @event.event_photos.each do |event_photo| %>
+			<% @event.event_photos.each do |ep| %>
 			<li>
 				<div class="row">
-					<div class="large-12 columns">
-						<%= link_to(image_event_photo_url(event_photo) ) do %>
-						<%= image_tag(image_event_photo_url(event_photo),
-						:alt => 'image', 'data-caption' => 'CAPTION') %>
+					<div class="large-6 columns">
+						<%= link_to(before_image_event_photo_url(ep) ) do %>
+						<%= image_tag(before_image_event_photo_url(ep),
+						:alt => ep.before_file_name) %>
 						<% end %>
 					</div>
-
+					<div class="large-6 columns">
+						<%= link_to(after_image_event_photo_url(ep) ) do %>
+						<%= image_tag(after_image_event_photo_url(ep),
+						:alt => ep.after_file_name) %>
+						<% end %>
+					</div>
 				</div>
 				<div class="row">
-					<div class="large-12 columns">
-						<%= link_to 'Excluir', admin_event_event_photo_path(@event,event_photo), method: :delete, data: { confirm: 'Você tem certeza?' } %>
-					</div>
+					<%= link_to 'Excluir', admin_event_event_photo_path(@event,ep),
+					method: :delete, data: { confirm: 'Você tem certeza?' },
+					:class => "button expand" %>
+					<div class="large-12 columns"></div>
 				</div>
 			</li>
 			<% end %>
