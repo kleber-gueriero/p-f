@@ -1,15 +1,15 @@
 <%= form_for([:admin, @event, @event_photo]) do |f| %>
-  <% if @event_photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event_photo.errors.count, "error") %> prohibited this event_photo from being saved:</h2>
-
-      <ul>
-      <% @event_photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<% if @event_photo.errors.any? %>
+	<div id="error_explanation">
+		<ul>
+			<% @event.errors.full_messages.each do |msg| %>
+			<li>
+				<%= msg %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
 
   <div class="field">
     <%= f.label :before_image_file %><br />

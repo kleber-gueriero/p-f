@@ -24,11 +24,10 @@ $('.date-field').datepicker({
 
 function switchBeforeAfter(sender) {
 	if (sender.id == 'rad-before') {
-		$('.before-after-list .after-item').hide();
-		$('.before-after-list .before-item').show();
+		$('.after-list').hide();
+		$('.before-list').show();
 	} else {
-		$('.before-after-list .before-item').hide();
-		$('.before-after-list .after-item').show();
+		$('.before-list').hide();
+		$('.after-list').show();
 	};
-
 }

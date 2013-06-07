@@ -11,13 +11,17 @@ class Admin::EventPhotosController < Admin::AdminController
   def create
     @event = Event.find(params[:event_id])
     @event_photo = @event.event_photos.build(params[:event_photo])
-
-      if @event_photo.save
-        flash[:notice] = "Foto adicionada com sucesso"
-        redirect_to( edit_admin_event_path(@event))
-      else
-        format.html { render action: "edit", controller: "admin/events" }
-      end
+    
+    if @event_photo.save
+      flash[:notice] = "Foto adicionada com sucesso"
+    else
+      flash[:notice] = "Foto não pode ser adicionada"
+    end
+    
+    respond_with @event_photo do |format|
+        format.html {redirect_to( edit_admin_event_path(@event))}
+        #format.html {render( :partial => "admin/event_photos/form", :event => @event, :event_photo => @event_photo )}
+    end
   end
 
   def destroy

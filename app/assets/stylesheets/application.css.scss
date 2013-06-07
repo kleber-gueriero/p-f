@@ -31,6 +31,17 @@ $header-font-color: $topbar-link-color;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
+//Switcher
+//$switch-bg: red;
+//$switch-paddle-bg: blue;
+$switch-paddle-fade-to-color: yellow;
+$radius: 100px;
+//$switch-positive-color: rgba($main-color,0.5);
+//$switch-negative-color: rgba(gray,0.5);
+$switch-paddle-border-style: solid;
+$switch-paddle-transition-speed: .3s;
+$switch-paddle-transition-ease: ease-out;
+
 @import "foundation_and_overrides";
 //= require jquery-ui
 //= require_self
@@ -93,20 +104,4 @@ ul[data-orbit]
 .logo-font
 {
   font-family: $logo-font-family;
-}
-.switch-lever{
-  
-}
-.before-after-list li:hover
-{
-  z-index: 999999;
-  position: fixed !important;
-  background-color: rgba($main-color,0.5);
-  top: 5%;
-  height: 95%;
-  width: 95%;
-  img{
-    position: absolute;
-    
-  }
 }

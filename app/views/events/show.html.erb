@@ -15,25 +15,37 @@
 	<b>Description:</b>
 	<%= @event.description %>
 </p>
+<div class="row">
+	<div class="large-4 columns">
+		<div class="switch">
+			<input id="rad-before" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" >
+			<label for="rad-before" >Antes</label>
 
-<div class="switch">
-	<input id="rad-before" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" >
-	<label for="rad-before" >Antes</label>
-
-	<input id="rad-after" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" checked>
-	<label for="rad-after" onclick="">Depois</label>
-	<span class="switch-lever"><%= image_tag("double_direction_arrow.png") %></span>
+			<input id="rad-after" name="switch-before-after" type="radio" onclick="switchBeforeAfter(this)" checked>
+			<label for="rad-after" onclick="">Depois</label>
+			<span class="switch-lever"></span>
+		</div>
+	</div>
 </div>
-
 <div class="row">
 	<div class="large-12 columns">
-		<ul class="small-block-grid-1 large-block-grid-5 before-after-list" >
+		<ul class="small-block-grid-1 large-block-grid-5 clearing-thumbs before-list" data-clearing style="display:none;">
 			<% @event.event_photos.each do |ep| %>
-			<li class="before-item" style="display:none;">
-				<%= image_tag(before_image_event_photo_url(ep), :alt => ep.before_file_name) %>
+			<li>
+				<%= link_to(before_image_event_photo_url(ep) ) do %>
+					<%= image_tag(before_image_event_photo_url(ep),
+					:alt => ep.before_file_name, 'data-caption' => '') %>
+				<% end %>
 			</li>
-			<li class="after-item">
-				<%= image_tag(after_image_event_photo_url(ep), :alt => ep.after_file_name) %>
+			<% end %>
+		</ul>
+		<ul class="small-block-grid-1 large-block-grid-5 clearing-thumbs after-list" data-clearing>
+			<% @event.event_photos.each do |ep| %>
+			<li>
+				<%= link_to(after_image_event_photo_url(ep) ) do %>
+					<%= image_tag(after_image_event_photo_url(ep),
+					:alt => ep.after_file_name, 'data-caption' => '') %>
+ 				<% end %>
 			</li>
 			<% end %>
 		</ul>
