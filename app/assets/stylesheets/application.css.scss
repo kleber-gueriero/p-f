@@ -105,3 +105,11 @@ ul[data-orbit]
 {
   font-family: $logo-font-family;
 }
+div.switch span{
+  background-image: image_url("double_direction_arrow_32px.png");
+  background-repeat: no-repeat; 
+}
+div.switch:hover > span, div.switch:focus > span{
+  background-image: image_url("double_direction_arrow_32px.png");
+  background-repeat: no-repeat; 
+}
