@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 class Admin::EventPhotosController < Admin::AdminController
   
   def image 
