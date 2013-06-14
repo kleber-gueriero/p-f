@@ -14,71 +14,79 @@
 
 	<body>
 		<header>
-			<div class="row show-for-medium-up">
-				<h1 class="small-10 large-12 columns"> Pereira & Franco Cenografias e Eventos </h1>
-				<!--
-				<div class="small-2 large-3 columns">
-					<%= image_tag('flores_lilas.jpg',:class => 'header-img') %>
+			<div class="row">
+				<div class="small-5 large-3 small-centered column">
+					<h1 class="logo">
+						<%= link_to(root_url) do %>
+							<!--
+							<%= image_tag("logo.png") %>
+							-->
+						<p class="name">
+							P<small> & </small>F
+						</p>
+						<p class="service">
+							<span class="first-letter">C</span>enografias
+							<span class="first-letter"> & </span>
+							<span class="first-letter">E</span>ventos
+						</p>
+						<% end %>
+	
+					</h1>
 				</div>
-				!-->
 			</div>
 		</header>
-
-		<div class="top-bar-container">
-			<nav class="row top-bar">
-				<ul class="title-area">
-					<li class="name">
-						<h1 class="show-for-medium-up"><%= link_to "Início",root_url %></h1>
-						<h1 class="show-for-medium-down"><%= link_to "Pereira & Franco Cenografias e Eventos",root_url %></h1>
-					</li>
-					<li class="toggle-topbar menu-icon">
-						<a href="#"><span>Menu</span></a>
-					</li>
-				</ul>
-				<section class="top-bar-section">
-					<ul class="left">
-						<li class="divider"></li>
-						<li <%= if current_page?(events_url) then 'class=active' end %> >
-							<%= link_to "Eventos", events_url %>
-						</li>
-						<li class="divider"></li>
-						<li <%= if current_page?(pages_about_us_url) then 'class=active' end %> >
-							<%= link_to "Quem Somos", pages_about_us_url %>
-						</li>
-						<li class="divider"></li>
-						<li <%= if current_page?(new_email_message_url) then 'class=active' end %> >
-							<%= link_to "Contato", new_email_message_url %>
-						</li>
-						<li class="divider"></li>
-					</ul>
-					<ul class="right">
-						<li class="divider"></li>
-						<%if admin_signed_in? %>
-						<li <%= if current_page?(admin_events_url) then 'class=active' end %> >
-							<%= link_to "Eventos-Admin", admin_events_url %>
-						</li>
-						<li class="divider"></li>
-						<li>
-							<%= link_to "Sair", destroy_admin_session_url, :method => :delete %>
-						</li>
-						<% else %>
-						<li <%= if current_page?(admin_session_url) then 'class=active' end %> >
-							<%= link_to "Entrar", admin_session_url %>
-						</li>
-						<%end%>
-						<li class="divider"></li>
-					</ul>
-				</section>
-			</nav>
-		</div>
-
-		
-		<div class="row">
-			<div class="large-12 columns">
+			<div class="row">
+				<div class="large-6 small-centered columns">
+					<div class="contain-to-grid">
+						<nav class="top-bar">
+							<ul class="title-area">
+								<li class="name">
+								</li>
+								<li class="toggle-topbar menu-icon">
+									<a href="#"><span>Menu</span></a>
+								</li>
+							</ul>
+							<section class="top-bar-section">
+								<ul class="left">
+									<li class="divider"></li>
+									<li <%= if current_page?(events_url) then 'class=active' end %> >
+										<%= link_to "Eventos", events_url %>
+									</li>
+									<li class="divider"></li>
+									<li <%= if current_page?(pages_about_us_url) then 'class=active' end %> >
+										<%= link_to "Quem Somos", pages_about_us_url %>
+									</li>
+									<li class="divider"></li>
+									<li <%= if current_page?(new_email_message_url) then 'class=active' end %> >
+										<%= link_to "Contato", new_email_message_url %>
+									</li>
+									<li class="divider"></li>
+									<li class="divider"></li>
+									<%if admin_signed_in? %>
+									<li <%= if current_page?(admin_events_url) then 'class=active' end %> >
+										<%= link_to "Eventos-Admin", admin_events_url %>
+									</li>
+									<li class="divider"></li>
+									<li>
+										<%= link_to "Sair", destroy_admin_session_url, :method => :delete %>
+									</li>
+									<% else %>
+									<li <%= if current_page?(admin_session_url) then 'class=active' end %> >
+										<%= link_to "Entrar", admin_session_url %>
+									</li>
+									<%end%>
+									<li class="divider"></li>
+								</ul>
+							</section>
+						</nav>
+					</div>
+				</div>
+			</div>
+		<div id="content">
+			<div id="main" class="row">
 				<%= yield %>
 			</div>
 		</div>
-
 		<%= javascript_include_tag "application" %>
 	</body>
 </html>

@@ -1,17 +1,37 @@
 //Variaveis Application
-$main-color: #C67AD9;
-$header-bg: rgba($main-color,0.3);
+$body-bg-color: #EEEEEE;
+$header-bg-color: transparent;
 $logo-font-family: "AmazoneBT", Verdana, Tahoma;
+$main-menu-bg-color: rgba(darken($body-bg-color,50%),0.2);
+
+//Mixins Application
+@mixin embossed-text{
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  color: #9c8468;
+  opacity: 0.2;
+}
+
+@mixin pressed-text($bg-color){
+  text-shadow: -1px -1px 0 #999999, 1px 1px 0 #FFFFFF;
+  color: $bg-color;
+}
+
+@mixin texture-weave($bg-color){
+  background-image: linear-gradient(90deg, black 1px, transparent 1px),
+                    linear-gradient(180deg, black 1px, transparent 1px);
+  background-size: 10px 10px, 10px 30px;
+  background-repeat: no-repeat, no-repeat;
+}
 
 //Variaveis Foundation
-$body-bg: rgba($main-color,0.2);
-$topbar-bg: rgba($main-color,1);
-$topbar-link-color: #254019;
+$body-bg: $body-bg-color;
+$topbar-bg: $main-menu-bg-color;
+$topbar-link-color: #F0F0F0;
 
-$topbar-link-bg-active: lighten($topbar-bg,10%);
-$topbar-link-bg-hover: lighten($topbar-bg,5%);
+$topbar-link-bg-active: lighten($main-menu-bg-color,10%);
+$topbar-link-bg-hover: lighten($main-menu-bg-color,5%);
 
-$topbar-dropdown-bg: $topbar-bg;
+$topbar-dropdown-bg: $main-menu-bg-color;
 $topbar-menu-link-color: $topbar-link-color;
 $topbar-menu-icon-color: $topbar-link-color;
 $topbar-menu-link-color-toggled: $topbar-menu-link-color;
@@ -32,11 +52,11 @@ $header-font-color: $topbar-link-color;
 // $body-font-style: normal;
 
 //Switcher
-//$switch-bg: red;
-//$switch-paddle-bg: blue;
+$switch-bg: $body-bg-color;
+//$switch-paddle-bg: red ;
 $switch-paddle-fade-to-color: yellow;
 $radius: 100px;
-//$switch-positive-color: rgba($main-color,0.5);
+//$switch-positive-color: rgba($body-bg,0.5);
 //$switch-negative-color: rgba(gray,0.5);
 $switch-paddle-border-style: solid;
 $switch-paddle-transition-speed: .3s;
@@ -47,51 +67,52 @@ $switch-paddle-transition-ease: ease-out;
 //= require_self
 //= require_tree .
 
+/* Browser's appearance reset */
 *{
   -moz-appearance: none;
   -webkit-appearance: none;
 }
 
+/* Foundation customization */
+.top-bar{
+  /* background-color: transparent; */
+}
+
+/* Application Css */
 @font-face {
   font-family: 'AmazoneBT';
   src: url('AmazoneBT.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-
-ul.clearing-thumbs 
-{
-  /*
-  img
-  {
-    width: 200px;
-  }
-  */
+h1,h2,h3,h4,h5,h6{
+  @include pressed-text($topbar-link-color);
 }
-
 header{
-  background-color: $header-bg;
+  background-color: $header-bg-color;
   h1{
-  font-size: 50px;
+    a, a:focus, a:hover, a small {
+      color: inherit;
+      p{
+        margin-top:0px;
+        margin-bottom:0px;
+      }
+      .name{
+          font-size: 100px;
+          height: 100px;
+      }
+      .service{
+        margin-left: 10px;
+        font-size: 15px;
+        font-family: Serif;
+        .first-letter{
+          font-size: 25px;
+        }
+      }
+    }
   }
-  .header-img{
-  margin-top: 20px;
-  }
-  
 }
-.top-bar-container{
-    background-color: $topbar-bg;
-}
-
-ul[data-orbit]
-{
-  height: 200px;
-  img
-  {
-    height: 100%;
-    width: 100%;
-  }
-}
+ 
 .top-bar-section 
 {
   ul li.active a{
@@ -112,4 +133,33 @@ div.switch span{
 div.switch:hover > span, div.switch:focus > span{
   background-image: image_url("double_direction_arrow_32px.png");
   background-repeat: no-repeat; 
+}
+
+
+
+body{
+  background-image: image-url("pereiraefranco-bg-texture.png");
+  repeat: repeat;
+}
+.before-list, .after-list{
+  li a{
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #F7F7F7;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C9C9C9;
+    box-shadow: 0px 0px 2px 2px #D3D3D3,
+                inset 0px 0px 2px 0px white;
+    padding: 5px;
+    line-height: 0;
+    img{
+      border-style: solid;
+      border-width: 1px;
+      border-color: #C9C9C9;
+      box-shadow: 0px 0px 2px 2px #D3D3D3,
+                inset 0px 0px 1px 1px white
+    }
+  }
 }
