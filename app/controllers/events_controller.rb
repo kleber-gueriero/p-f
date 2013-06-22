@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   def cover_image
     @event = Event.find(params[:id])
     @image = @event.cover_binary_data
-    send_data(@image, :type     => @event.cover_content_type, 
+    send_data(@image,  :type     => @event.cover_content_type, 
                        :filename => @event.cover_file_name, 
                        :disposition => 'inline')
   end
@@ -12,7 +12,10 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
-    respond_with @events
+    respond_with @events do |format|
+      format.html
+      format.js
+    end
     
   end
 

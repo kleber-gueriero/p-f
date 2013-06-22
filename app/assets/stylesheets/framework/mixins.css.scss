@@ -1,0 +1,17 @@
+@mixin embossed-text{
+  text-shadow: -1px -1px 1px #fff, 1px 1px 1px #000;
+  color: #9c8468;
+  opacity: 0.2;
+}
+
+@mixin pressed-text{
+  text-shadow: -1px -1px 0 #777777, 1px 1px 0 #FFFFFF;
+  color: darken($body-bg-color,10%);
+}
+
+@mixin texture-weave{
+  background-image: linear-gradient(90deg, black 1px, transparent 1px),
+                    linear-gradient(180deg, black 1px, transparent 1px);
+  background-size: 10px 10px, 10px 30px;
+  background-repeat: no-repeat, no-repeat;
+}

@@ -1,3 +1,30 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div.switch span{
+  background-image: image_url("double_direction_arrow_32px.png");
+  background-repeat: no-repeat; 
+}
+div.switch:hover > span, div.switch:focus > span{
+  background-image: image_url("double_direction_arrow_32px.png");
+  background-repeat: no-repeat; 
+}
+.before-list, .after-list{
+  li a{
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #F7F7F7;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C9C9C9;
+    box-shadow: 0px 0px 2px 2px #D3D3D3,
+                inset 0px 0px 2px 0px white;
+    padding: 5px;
+    line-height: 0;
+    img{
+      border-style: solid;
+      border-width: 1px;
+      border-color: #C9C9C9;
+      box-shadow: 0px 0px 2px 2px #D3D3D3,
+                inset 0px 0px 1px 1px white
+    }
+  }
+}

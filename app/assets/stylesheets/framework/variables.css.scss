@@ -1,0 +1,48 @@
+//Application Variables
+$body-bg-color: #EEEEEE;
+$logo-font-family: "AmazoneBT", Verdana, Tahoma;
+$main-menu-bg-color: rgba(darken($body-bg-color,50%),0.2);
+
+//Foundation Variables
+
+$body-bg: $body-bg-color;
+$topbar-bg: $main-menu-bg-color;
+//$topbar-link-color: #F0F0F0;
+$topbar-link-color: lighten($body-bg-color,10%);
+
+$topbar-link-bg-active: lighten($main-menu-bg-color,10%);
+$topbar-link-bg-hover: lighten($main-menu-bg-color,5%);
+
+$topbar-dropdown-bg: $main-menu-bg-color;
+$topbar-menu-link-color: $topbar-link-color;
+$topbar-menu-icon-color: $topbar-link-color;
+$topbar-menu-link-color-toggled: $topbar-menu-link-color;
+$topbar-menu-icon-color-toggled: $topbar-menu-icon-color;
+
+$header-font-family: $logo-font-family;
+// $header-font-weight: bold;
+// $header-font-style: normal;
+$header-font-color: darken($body-bg-color,10%);
+// $header-line-height: 1.4;
+// $header-top-margin: .2em;
+// $header-bottom-margin: .5em;
+
+$subheader-font-color: $header-font-color;
+
+// $body-bg: #fff;
+// $body-font-color: #222;
+// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+// $body-font-weight: normal;
+// $body-font-style: normal;
+
+//Switcher
+$switch-bg: $body-bg-color;
+//$switch-paddle-bg: red ;
+$switch-paddle-fade-to-color: yellow;
+$radius: 100px;
+//$switch-positive-color: rgba($body-bg,0.5);
+//$switch-negative-color: rgba(gray,0.5);
+$switch-paddle-border-style: solid;
+$switch-paddle-transition-speed: .3s;
+$switch-paddle-transition-ease: ease-out;
+

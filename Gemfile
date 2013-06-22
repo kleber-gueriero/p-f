@@ -7,8 +7,11 @@ gem 'rails', '3.2.12'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'zurb-foundation', '~> 4.0.0'
 gem 'devise'
 gem 'cancan'
+gem 'turbolinks'
+
 
 
 # Gems used only for assets and not required
@@ -21,8 +24,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   
-  # Add Foundation Here
-  gem 'zurb-foundation', '~> 4.0.0'
+  
 end
 
 

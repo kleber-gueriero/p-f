@@ -9,33 +9,33 @@
 
 		<%= stylesheet_link_tag    "application" %>
 		<%= javascript_include_tag "vendor/custom.modernizr" %>
+		<%= javascript_include_tag "application" %>
 		<%= csrf_meta_tags %>
 	</head>
 
 	<body>
-		<header>
-			<div class="row">
-				<div class="small-5 large-3 small-centered column">
+		<header class="row">
+				<div class="small-12 columns">
 					<h1 class="logo">
 						<%= link_to(root_url) do %>
-						<p class="name">
-							P<small> & </small>F
-						</p>
-						<p class="service">
+						<div class="row">
+						<div class="small-5 large-10 small-centered column name">
+							PereiraEFranco
+						</div>
+						</div>
+						<div class="row">
+						<div class="small-5 large-3 small-centered column service">
 							<span class="first-letter">C</span>enografias
 							<span class="first-letter"> & </span>
 							<span class="first-letter">E</span>ventos
-						</p>
+						</div>
+						</div>
 						<% end %>
 	
 					</h1>
-				</div>
-			</div>
+					</div>
 		</header>
-			<div class="row">
-				<div class="large-6 small-centered columns">
-					<div class="contain-to-grid">
-						<nav class="top-bar">
+		<nav class="top-bar">
 							<ul class="title-area">
 								<li class="name">
 								</li>
@@ -53,6 +53,7 @@
 									<li <%= if current_page?(pages_about_us_url) then 'class=active' end %> >
 										<%= link_to "Quem Somos", pages_about_us_url %>
 									</li>
+									
 									<li class="divider"></li>
 									<li <%= if current_page?(new_email_message_url) then 'class=active' end %> >
 										<%= link_to "Contato", new_email_message_url %>
@@ -76,14 +77,10 @@
 								</ul>
 							</section>
 						</nav>
-					</div>
-				</div>
-			</div>
-		<div id="content">
-			<div id="main" class="row">
+		<section id="main" class="row">
+			<div id="page-<%=controller.controller_name + "-" + controller.action_name %>" class="row">
 				<%= yield %>
 			</div>
 		</div>
-		<%= javascript_include_tag "application" %>
 	</body>
 </html>
