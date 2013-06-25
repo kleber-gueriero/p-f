@@ -2,5 +2,6 @@
 @import "framework/variables";
 @import "framework/mixins";
 @import "foundation_and_overrides";
+//= require jquery.ui.all
 @import "framework/core";
 //= require_tree .

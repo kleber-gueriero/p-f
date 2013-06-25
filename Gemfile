@@ -7,6 +7,7 @@ gem 'rails', '3.2.12'
 
 gem 'pg'
 gem 'jquery-rails'
+gem "jquery-ui-rails"
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'devise'
 gem 'cancan'
