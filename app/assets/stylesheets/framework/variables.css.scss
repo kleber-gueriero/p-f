@@ -6,6 +6,7 @@ $main-menu-bg-color: rgba(darken($body-bg-color,50%),0.2);
 //Foundation Variables
 
 $body-bg: $body-bg-color;
+$primary-color: darken($body-bg-color,80%);
 $topbar-bg: $main-menu-bg-color;
 //$topbar-link-color: #F0F0F0;
 $topbar-link-color: lighten($body-bg-color,10%);

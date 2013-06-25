@@ -1,7 +1,6 @@
 <h1><%= t(".title") %></h1>
 
-<%= render 'form' %>
+<%= render "form" %>
 <%= render "admin/event_photos/form", :event => @event, :event_photo => @event_photo %>
 
-<%= link_to 'Show', @event, :class => "button" %> |
-<%= link_to 'Back', admin_events_path, :class => "button" %>
+<%= link_to t("back").humanize, admin_events_path, :class => "button" %>

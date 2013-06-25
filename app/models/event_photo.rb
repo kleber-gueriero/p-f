@@ -13,9 +13,11 @@ class EventPhoto < ActiveRecord::Base
   def before_image_file
     return_data = nil
     unless self.before_file_name.nil?
-      return_data.before_file_name = self.before_file_name
-      return_data.before_content_type = self.before_content_type
-      return_data.before_binary_data = self.before_binary_data
+      return_data = ActionDispatch::Http::UploadedFile.new({
+        :filename => self.before_file_name,
+        :content_type => self.before_content_type,
+        :tempfile => self.before_binary_data
+      })
     end
     return_data
   end
@@ -29,9 +31,11 @@ class EventPhoto < ActiveRecord::Base
   def after_image_file
     return_data = nil
     unless self.after_file_name.nil?
-      return_data.after_file_name = self.after_file_name
-      return_data.after_content_type = self.after_content_type
-      return_data.after_binary_data = self.after_binary_data
+      return_data = ActionDispatch::Http::UploadedFile.new({
+        :filename => self.after_file_name,
+        :content_type => self.after_content_type,
+        :tempfile => self.after_binary_data
+      })
     end
     return_data
   end

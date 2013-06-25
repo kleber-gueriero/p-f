@@ -8,12 +8,6 @@ var loadMain = function(pageUrl){
 		$newPage.hide();
 		$main.append($newPage);
 		$loadingMain.remove();
-		/*
-		setTimeout(
-		readyFunction,
-		100
-		);
-		*/
 		var toggleEffect = "fade";
 		switch(Math.round(Math.random()*10)){
 			case 1: case 2:
@@ -64,7 +58,14 @@ var readyFunction = function(){
 
 	$(document).foundation();
 	$(".date-field").datepicker({
-		altFormat : "dd/MM/yy"
+	    dateFormat: 'dd/mm/yy',
+	    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+	    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+	    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+	    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+	    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+	    nextText: 'Próximo',
+	    prevText: 'Anterior'
 	});
 };
 $(document).ready(readyFunction);

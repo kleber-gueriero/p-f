@@ -6,6 +6,9 @@ pt-BR:
       event:
         one: "Evento"
         other: "Eventos"
+      event_photo:
+        one: "Foto de Evento"
+        other: "Fotos de Evento"
     attributes:
       event:
         cover_image_file: "capa"

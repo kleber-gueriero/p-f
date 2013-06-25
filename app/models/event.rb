@@ -14,10 +14,12 @@ class Event < ActiveRecord::Base
   
   def cover_image_file
     return_data = nil
-    unless self.cover_file_name.nil?
-      return_data.cover_file_name = self.cover_file_name
-      return_data.cover_content_type = self.cover_content_type
-      return_data.cover_binary_data = self.cover_binary_data
+    unless (self.cover_file_name.nil?)
+      return_data = ActionDispatch::Http::UploadedFile.new({
+        :filename => self.cover_file_name,
+        :content_type => self.cover_content_type,
+        :tempfile => self.cover_binary_data
+      })
     end
     return_data
   end

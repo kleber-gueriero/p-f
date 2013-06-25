@@ -22,9 +22,6 @@ Pereiraefranco::Application.routes.draw do
     end
   end
   
-  authenticated :user do
-    root :to => "admin/events#index"
-  end
 
   root :to => 'pages#index'
   
