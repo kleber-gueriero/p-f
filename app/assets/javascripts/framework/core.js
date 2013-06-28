@@ -84,6 +84,7 @@ function loading(container){
 	); 
 	$overlay.width($container.width());
 	$overlay.height($container.height());
+	$overlay.append($animation);
 	$(container).append($overlay);
 	var loadingObj = $overlay;
 	return loadingObj;
