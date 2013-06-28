@@ -57,7 +57,7 @@ var readyFunction = function(){
 	});
 
 	$(document).foundation();
-	$(".date-field").datepicker({
+	$("*[data-field-type='date']").datepicker({
 	    dateFormat: 'dd/mm/yy',
 	    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
 	    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
