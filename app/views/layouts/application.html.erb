@@ -46,14 +46,27 @@
 							<section class="top-bar-section">
 								<ul class="left">
 									<li class="divider"></li>
+									<%if admin_signed_in? %>
+									<li class="has-dropdown">
+										<a href="#">Eventos</a>
+										<ul class="dropdown">
+											<li <%= if current_page?(events_url) then 'class=active' end %> >
+												<%= link_to "Eventos-Normal", events_url %>
+											</li>
+											<li <%= if current_page?(admin_events_url) then 'class=active' end %> >
+												<%= link_to "Eventos-Admin", admin_events_url %>
+											</li>
+										</ul>
+									</li>
+									<% else %>
 									<li <%= if current_page?(events_url) then 'class=active' end %> >
 										<%= link_to "Eventos", events_url %>
 									</li>
+									<%end%>
 									<li class="divider"></li>
 									<li <%= if current_page?(pages_about_us_url) then 'class=active' end %> >
 										<%= link_to "Quem Somos", pages_about_us_url %>
 									</li>
-									
 									<li class="divider"></li>
 									<li <%= if current_page?(new_email_message_url) then 'class=active' end %> >
 										<%= link_to "Contato", new_email_message_url %>
@@ -61,10 +74,6 @@
 									<li class="divider"></li>
 									<li class="divider"></li>
 									<%if admin_signed_in? %>
-									<li <%= if current_page?(admin_events_url) then 'class=active' end %> >
-										<%= link_to "Eventos-Admin", admin_events_url %>
-									</li>
-									<li class="divider"></li>
 									<li>
 										<%= link_to "Sair", destroy_admin_session_url, :method => :delete %>
 									</li>

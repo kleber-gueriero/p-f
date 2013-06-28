@@ -11,6 +11,12 @@
   width: 35%;
   margin-left: auto;
   margin-right: auto;
+  
+}
+@media #{$small} { 
+  .top-bar{
+    background-color: transparent;
+  }
 }
 
 // Application Css
@@ -54,7 +60,13 @@ header{
   li a:hover:not(.button){
     background: $topbar-link-bg-hover;
   }
+  .has-dropdown{
+    .dropdown{
+      background: $topbar-dropdown-bg;
+    }
+  }
 }
+
 .logo-font
 {
   font-family: $logo-font-family;
