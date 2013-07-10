@@ -19,12 +19,12 @@
 					<h1 class="logo">
 						<%= link_to(root_url) do %>
 						<div class="row">
-						<div class="small-5 large-10 small-centered column name">
+						<div class="small-5 large-10 small-centered columns name">
 							PereiraEFranco
 						</div>
 						</div>
 						<div class="row">
-						<div class="small-5 large-3 small-centered column service">
+						<div class="small-5 large-3 small-centered columns service">
 							<span class="first-letter">C</span>enografias
 							<span class="first-letter"> & </span>
 							<span class="first-letter">E</span>ventos
@@ -86,8 +86,8 @@
 								</ul>
 							</section>
 						</nav>
-		<section id="main" class="row">
-			<div id="page-<%=controller.controller_name + "-" + controller.action_name %>" class="row">
+		<div id="main" class="row">
+			<div id="page-<%=controller.controller_name + "-" + controller.action_name %>" class="small-12 columns">
 				<%= yield %>
 			</div>
 		</div>

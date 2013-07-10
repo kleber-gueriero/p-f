@@ -9,12 +9,12 @@
 
 <p id="notice">
 	<%= notice %>
+	<span class="description">	
+	- <%= @event.description %>
+</span>
 </p>
 
-<p>
-	<b>Description:</b>
-	<%= @event.description %>
-</p>
+
 <div class="row">
 	<div class="large-4 columns">
 		<div class="switch">
@@ -52,4 +52,4 @@
 	</div>
 </div>
 
-<%= link_to 'Back', events_path, :class => "button" %>
+<%= link_to t("back").humanize, events_path, :class => "button" %>

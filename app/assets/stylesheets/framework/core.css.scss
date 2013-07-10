@@ -17,6 +17,25 @@
   .top-bar{
     background-color: transparent;
   }
+  header{
+    h1{
+      a, a:focus, a:hover, a small {
+        color: inherit;
+        font-weight: normal;
+        .name{
+            font-size: 100px;
+            height: 100px;
+        }
+        .service{
+          font-size: 15px;
+          font-family: Serif;
+          .first-letter{
+            font-size: 25px;
+          }
+        }
+      }
+    }
+  }
 }
 
 // Application Css
@@ -37,17 +56,6 @@ header{
     a, a:focus, a:hover, a small {
       color: inherit;
       font-weight: normal;
-      .name{
-          font-size: 100px;
-          height: 100px;
-      }
-      .service{
-        font-size: 15px;
-        font-family: Serif;
-        .first-letter{
-          font-size: 25px;
-        }
-      }
     }
   }
 }
@@ -95,6 +103,10 @@ body{
   z-index:9999;
   color:white;
    
+}
+.description{
+  font-style: italic;
+  color: #A0A0A0;
 }
 
 
