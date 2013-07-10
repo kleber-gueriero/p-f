@@ -4,7 +4,8 @@ class ContactMailer < ActionMailer::Base
   def contact_message(email_message)
     #@url  = "http://example.com/login"
     @email_message = email_message
-    mail(:subject => "Contato pelo site")
+    #mail options: :subject, :to, :from, :cc, :bcc, :reply_to, :date
+    mail(:from => @email_message.from, :subject => @email_message.subject)
   end
   
 end
