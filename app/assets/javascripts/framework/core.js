@@ -9,31 +9,6 @@ var loadMain = function(pageUrl) {
 		$main.append($newPage);
 		$loadingMain.complete(function() {
 			var toggleEffect = "fade";
-			switch(Math.round(Math.random()*10)) {
-				case 1:
-				case 2:
-					toggleEffect = "drop";
-					break;
-				case 3:
-				case 4:
-					toggleEffect = "fade";
-					break;
-				case 5:
-				case 6:
-					toggleEffect = "fold";
-					break;
-				case 7:
-				case 8:
-					toggleEffect = "size";
-					break;
-				case 9:
-				case 10:
-					toggleEffect = "slide";
-					break;
-				default:
-					toggleEffect = "fade";
-					break;
-			}
 			$newPage.show({
 				effect : toggleEffect,
 				complete : readyFunction

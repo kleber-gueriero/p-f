@@ -8,7 +8,7 @@
 // Foundation customization
 .top-bar{
   // background-color: transparent;
-  width: 35%;
+  width: 355px;
   margin-left: auto;
   margin-right: auto;
   
@@ -22,9 +22,11 @@
       a, a:focus, a:hover, a small {
         color: inherit;
         font-weight: normal;
+        text-align: center;
         .name{
             font-size: 100px;
             height: 100px;
+            margin-left: -10px;
         }
         .service{
           font-size: 15px;
@@ -111,3 +113,6 @@ body{
 
 
 
+.orbit-slide-number, .orbit-timer, .orbit-prev, .orbit-next, .orbit-caption, .orbit-bullets{
+  display:none;
+} 
