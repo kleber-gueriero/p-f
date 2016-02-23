@@ -1,0 +1,10 @@
+{
+  "name": "p-f",
+  "scripts": {},
+  "env": {},
+  "addons": [
+    "sendgrid",
+    "heroku-postgresql"
+  ],
+  "buildpacks": []
+}
